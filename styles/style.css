@@ -13,12 +13,12 @@
 }
 
 .page {
-  min-inline-size: 360px;
-  max-inline-size: 1440px;
-  margin: 0;
+  margin: 0 auto;
   color: var(--text-color, #312a4e);
   font-family: var(--main-font, sans-serif);
   background-color: var(--bg-color, #f3efec);
+  min-inline-size: 360px;
+  max-inline-size: 1440px;
   min-inline-size: 360px;
 }
 
@@ -36,7 +36,7 @@ figure {
 
 .theme_dark {
   --bg-color: #171717;
-  --text-color: #B3B3B3;
+  --text-color: #b3b3b3;
   --accent-color: transparent;
 }
 
@@ -56,10 +56,12 @@ figure {
   text-decoration: underline solid currentColor;
   text-underline-offset: 2px;
 }
-button:focus, a:focus {
+button:focus,
+a:focus {
   outline: none;
 }
-button:focus-visible, a:focus-visible {
+button:focus-visible,
+a:focus-visible {
   outline: 1px solid currentColor;
 }
 
@@ -81,21 +83,20 @@ button:disabled {
   font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
 }
 
-
 .header__menu {
-  padding: 20px;
-  border-top: 1px solid var(--text-color);
-  border-bottom: 1px solid var(--text-color);
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  padding: 20px;
 }
 
 .header__theme-toggler {
   position: relative;
   display: flex;
   gap: 20px;
-  list-style: none;
   align-self: center;
+  list-style: none;
 }
 
 .header__theme-button {
@@ -114,14 +115,14 @@ button:disabled {
 }
 
 .header__theme-button_is-active::after {
-  content: '';
+  content: "";
   position: absolute;
+  inset-inline-start: -3px;
+  inset-block-end: 0.3ch;
   z-index: -1;
+  background-color: var(--accent-color);
   block-size: 0.5ch;
   inline-size: calc(100% + 8px);
-  inset-block-end: 0.3ch;
-  inset-inline-start: -3px;
-  background-color: var(--accent-color);
 }
 
 .theme_dark .header__theme-button_is-active::after {
@@ -147,7 +148,9 @@ button:disabled {
   background-color: var(--accent-color);
 }
 
-.theme_dark .content__text-block .content__text-block_type_first-lettered::first-letter {
+.theme_dark
+  .content__text-block
+  .content__text-block_type_first-lettered::first-letter {
   border: 1px solid var(--text-color);
 }
 
@@ -162,15 +165,15 @@ button:disabled {
   width: 75%;
   margin: 0 auto 1.5em;
   color: inherit;
+  color: inherit;
   font-size: 18px;
   font-style: italic;
   line-height: 200%;
-  color: inherit;
 }
 
 .content__list {
-  list-style: none;
   padding-left: 40px;
+  list-style: none;
 }
 
 .content__list-item {
@@ -182,8 +185,10 @@ button:disabled {
 }
 
 .content__list-item::before {
-  content: '';
+  content: "";
   position: absolute;
+  inset-inline-start: -25px;
+  inset-block-start: 16%;
   width: 15px;
   height: 15px;
   margin-left: -7.5px;
@@ -191,20 +196,17 @@ button:disabled {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  inset-block-start: 16%;
-  inset-inline-start: -25px;
 }
 
 .content__picture {
-inline-size: 100%;
+  inline-size: 100%;
 }
 
 .content__figure {
   position: relative;
-  inline-size: calc(100% + 10vi);
-  margin: 7% auto;
   inset-inline-end: 5vi;
-
+  margin: 7% auto;
+  inline-size: calc(100% + 10vi);
 }
 .content__picture-caption {
   border-block-end: 1px solid currentColor;
@@ -214,13 +216,13 @@ inline-size: 100%;
 }
 
 .content__card {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin-top: 7%;
-border: 1px solid currentColor;
-aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+  border: 1px solid currentColor;
+  aspect-ratio: 4/3;
 }
 
 .content__card-title {
@@ -236,29 +238,28 @@ aspect-ratio: 4/3;
 
 .colored-text {
   position: relative;
-  display: inline-block
+  display: inline-block;
 }
 
 .colored-text::after {
-  content: '';
+  content: "";
   position: absolute;
-  background-color: var(--accent-color);
+  inset-inline-start: -4px;
+  inset-block-end: 0.3ch;
   z-index: -1;
+  background-color: var(--accent-color);
   block-size: 0.5ch;
   inline-size: calc(100% + 8px);
-  inset-block-end: 0.3ch;
-  inset-inline-start: -4px;
 }
 
 .theme_dark .colored-text::after {
   background-image: url(/images/pattern.svg);
-
 }
 
 .footer {
   margin-top: 10%;
-  padding: 36px 2.5%;
   border-top: 1px solid var(--text-color);
+  padding: 36px 2.5%;
   padding: 2.5%;
   text-align: center;
 }
